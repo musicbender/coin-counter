@@ -1,0 +1,131 @@
+@import './helpers/_variables';
+@import './helpers/_mixins';
+@import './helpers/_placeholders';
+
+
+/*******GLOBALS*******/
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: $font;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+body {
+    background-color: $offwhite;
+}
+
+h1 {
+    font-size: $h1-size;
+    text-align: center;
+}
+
+
+/*******MAIN*******/
+
+.app-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.sub-app {
+    @include super-center;
+    @include box-shadow(2);
+    margin: 0 auto;
+    height: 46em;
+    padding: 0;
+    width: 100%;
+    max-width: 52em;
+    overflow: hidden;
+    background-color: $white;
+    z-index: 10;
+}
+
+.sub-app-outter {
+  @extend %full-position;
+  z-index: 5;
+}
+
+.home-container {
+    @extend %full-position;
+    z-index: 1;
+}
+
+.home-blur {
+  filter: blur(15px);
+  background-color: rgba($white, 0.05);
+}
+
+
+/*******Sections*******/
+
+.section {
+  position: relative;
+  top: 0;
+}
+
+.section-top {
+  height: calc(50% - 45px);
+}
+
+.section-bottom {
+  height: 50%;
+}
+
+.section-top.withtabs {
+  height: calc(60% - 45px);
+}
+
+.section-bottom.withtabs {
+  height: 40%;
+}
+
+.section-top.withcolorfade {
+  height: calc(50% - 45px + 3em);
+  top: -3em;
+}
+
+.section-bottom.withcolorfade {
+  top: -3em;
+}
+
+.section-top.big-top {
+  height: calc(60% - 45px);
+  background-color: $white;
+}
+
+.section-bottom.big-top {
+  height: 40.1%;
+  background-color: $white;
+}
+
+
+/*******MEDIA QUERIES*******/
+
+@media only screen and (max-width: 767px) {
+  .sub-app {
+    height: 100%;
+  }
+  .section,
+  .section.withtabs {
+    height: calc(50% - 22.5px);
+  }
+  .section.withcolorfade {
+    height: calc(50% - 22.5px + 3em);
+  }
+  .home-blur {
+    filter: none;
+  }
+}

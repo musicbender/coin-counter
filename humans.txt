@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Pat Jacobs - patjacobs.io
+
+# THANKS
+
+    <name>
+
+# TECHNOLOGY COLOPHON
+
+    React
+    Redux
+    SCSS
+    Material UI
+    Webpack
+    
