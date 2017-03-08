@@ -1,2 +1,4 @@
-export const APP_OPEN = "APP_OPEN";
-export const APP_CLOSE = "APP_CLOSE";
+export const COIN_SELECT = "COIN_SELECT";
+export const INPUT_CALCULATE = "INPUT_CALCULATE"
+export const VALUE_INCREMENT = "VALUE_INCREMENT"
+export const VALUE_DECREMENT = "VALUE_DECREMENT"

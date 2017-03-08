@@ -1,13 +1,27 @@
-import { APP_OPEN, APP_CLOSE } from '../constants/index';
+import { COIN_SELECT, INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT } from '../constants/index';
 
-export function openApp() {
+export function selectCoin(coin) {
   return {
-    type: APP_OPEN
+    type: COIN_SELECT,
+    coin
   }
 }
 
-export function closeApp() {
+export function calculateInput(value) {
   return {
-    type: APP_CLOSE
+    type: INPUT_CALCULATE,
+    value
+  }
+}
+
+export function incrementValue() {
+  return {
+    type: VALUE_INCREMENT,
+  }
+}
+
+export function decrementValue() {
+  return {
+    type: VALUE_DECREMENT,
   }
 }

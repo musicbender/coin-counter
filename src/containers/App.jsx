@@ -1,37 +1,34 @@
 import React, { Component } from 'react';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import HomeMenu from './Home-Menu.jsx';
-import '../style/header.scss';
+import { changeBlock, changeTime } from '../actions/index';
+import Title from '../components/title.jsx';
+import CoinSection from '../components/coin-section.jsx';
+import Input from '../components/input.jsx';
+import '../style/base.css';
 
 class App extends Component {
   render() {
-    const muiTheme = getMuiTheme({
-      slider: {
-        handleSize: 20,
-        selectionColor: this.props.speed.color,
-        handleColorZero: 'rgb(70, 50, 42)',
-        handleFillColor: 'rgb(70, 50, 42)',
-        rippleColor: this.props.speed.color
-      }
-    });
-
     return (
-      <MuiThemeProvider muiTheme={muiTheme}>
         <div className="app-container">
-          <HomeMenu location={this.props.location} />
-          {this.props.children}
+          <Title />
+          <CoinSection />
+          <Input />
         </div>
-      </MuiThemeProvider>
     )
   }
 }
 
-function mapStateToProps({dripTimer_speed}) {
+function mapStateToProps(state) {
   return {
-    speed: dripTimer_speed
+
   };
 }
 
-export default connect(mapStateToProps)(App);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

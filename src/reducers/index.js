@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import subApp from './reducer_app';
+import coins from './reducer_coins';
+import coinBadge from './reducer_coin-badge';
 
 const rootReducer = combineReducers({
-  routing: routerReducer,
-  subApp,
+  coins,
+  coinBadge
 });
 
 export default rootReducer;
