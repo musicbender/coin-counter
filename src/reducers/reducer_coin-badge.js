@@ -7,7 +7,7 @@ const initialState = {
   badge4: 0
 }
 
-export default function coinCounter(state = initialState, action) {
+export default function coinBadge(state = initialState, action) {
   switch (action.type) {
     case INPUT_CALCULATE:
       return state;

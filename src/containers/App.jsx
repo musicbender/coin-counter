@@ -19,15 +19,29 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
+function mapStateToProps({coins, coinBadge}) {
+  const { selectedCoin, coin1, coin2, coin3, coin4 } = coins;
+  const { badge1, badge2, badge3, badge4 } = coinBadge;
 
+  return {
+    selectedCoin,
+    coin1,
+    coin2,
+    coin3,
+    coin4,
+    badge1,
+    badge2,
+    badge3,
+    badge4
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-
+    selectCoin,
+    calculateInput,
+    incrementValue,
+    decrementValue
   }, dispatch);
 }
 

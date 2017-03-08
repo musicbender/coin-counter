@@ -8,7 +8,7 @@ const initialState = {
   coin4: 1
 }
 
-export default function coinCounter(state = initialState, action) {
+export default function coins(state = initialState, action) {
   switch (action.type) {
     case COIN_SELECT:
       return { ...state, selectedCoin: action.coin };
