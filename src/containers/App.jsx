@@ -7,12 +7,38 @@ import CoinSection from '../components/coin-section.jsx';
 import Input from '../components/input.jsx';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  changeValue(dir) {
+    return;
+  }
+
   render() {
+    const coins = {
+      coin1: this.props.coin1,
+      coin2: this.props.coin2,
+      coin3: this.props.coin3,
+      coin4: this.props.coin4
+    }
+
+    const badges = {
+      badge1: this.props.badge1,
+      badge2: this.props.badge2,
+      badge3: this.props.badge3,
+      badge4: this.props.badge4
+    }
+
     return (
         <div className="main-container">
           <Title />
-          <CoinSection />
-          <Input />
+          <CoinSection
+            {...coins}
+            {...badges}
+            selectCoin={this.props.selectCoin}
+          />
+          <Input calculateInput={this.props.calculateInput} />
         </div>
     )
   }

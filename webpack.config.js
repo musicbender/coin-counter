@@ -26,7 +26,10 @@ var config = {
     },
     module: {
         rules: [
-            { test: /\.jsx?$/, include: __dirname + '/src', loader: "babel-loader" },
+            {   test: /\.jsx?$/,
+                include: __dirname + '/src',
+                loader: "babel-loader"
+            },
             {
                 test: /\.css$/,
                 use: [ 'style-loader', 'css-loader' ]
