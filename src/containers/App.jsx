@@ -37,6 +37,7 @@ class App extends Component {
             {...coins}
             {...badges}
             selectCoin={this.props.selectCoin}
+            selectedCoin={this.props.selectedCoin}
           />
           <Input calculateInput={this.props.calculateInput} />
         </div>
