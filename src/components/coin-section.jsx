@@ -1,9 +1,10 @@
 import React from 'react';
+import '../style/coin-section.css';
 
 export default (props) => {
   return (
-    <div class="input-container">
-      <div>coins</div>
+    <div className="input-container">
+      <div></div>
     </div>
   )
 };

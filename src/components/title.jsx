@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/title.css';
 
 export default () => {
   return (

@@ -1,0 +1,10 @@
+/******* TITLE *******/
+
+.title {
+  margin: 2em;
+  color: rgb(80,80,80);
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}

@@ -25,18 +25,20 @@ var config = {
         publicPath: '/'
     },
     module: {
-        loaders: [
+        rules: [
             { test: /\.jsx?$/, include: __dirname + '/src', loader: "babel-loader" },
-            { test: /\.css$/, loader: "style!css" }
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            }
         ]
     },
     plugins: [
-      HtmlWebpackPluginConfig,
-      CopyWebpackPluginConfig
+      HtmlWebpackPluginConfig
     ],
     devServer: {
       historyApiFallback: true,
-      port: 8081
+      port: 8082
     },
     watch: true
 }

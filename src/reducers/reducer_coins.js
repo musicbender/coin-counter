@@ -10,17 +10,17 @@ const initialState = {
 
 export default function coins(state = initialState, action) {
   switch (action.type) {
-    case COIN_SELECT:
+    case COIN_SELECT: {
       return { ...state, selectedCoin: action.coin };
-
-    case VALUE_INCREMENT:
+    }
+    case VALUE_INCREMENT: {
     const newValue = action.coin + 1;
       return { ...state, [action.coin]: newValue };
-
-    case VALUE_DECREMENT:
+    }
+    case VALUE_DECREMENT: {
     const newValue = action.coin - 1;
       return { ...state, [action.coin]: newValue };
-
+    }
     default:
       return state;
   }
