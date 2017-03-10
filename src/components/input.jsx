@@ -16,7 +16,7 @@ class Input extends Component {
   render() {
     return (
       <form className="input-container">
-        <input type="text" ref={(input) => this.input = input}/>
+        <input type="number" step="1" min="1" max="1000000000" ref={(input) => this.input = input}/>
         <button type="submit" onClick={this.handleSubmit}>CALCULATE</button>
       </form>
     )

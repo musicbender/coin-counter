@@ -1,11 +1,10 @@
 const calculate = {
-    makeChange(amount, coinSet) {
-    	var badges = [], coinValue = 0, coinCount = 0;
-        const coinsArray = this.makeSortable(coinSet).sort(this.sortCoins);
+    makeChange(input, coinSet) {
+      const coinsArray = this.makeSortable(coinSet).sort(this.sortCoins);
+        var badges = [], coinValue = 0, amount = Math.round(input);
 
     	for (let x of coinsArray) {
-    		coinCount = 0;
-    		coinValue = x.value;
+    		var coinCount = 0, coinValue = x.value;
 
     		while (amount >= coinValue) {
     			amount -= coinValue;
@@ -21,13 +20,8 @@ const calculate = {
     makeSortable(coinSet) {
         var sortable = [];
         for (let coin in coinSet) {
-            let obj = {};
-            obj.key = coin;
-            obj.value = coinSet[coin];
-
-            sortable.push(obj);
+            sortable.push({ coin, value: coinSet[coin] });
         }
-
         return sortable;
     },
 

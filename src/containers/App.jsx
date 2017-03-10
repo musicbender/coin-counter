@@ -28,19 +28,24 @@ class App extends Component {
     }
   }
 
-  handleCalculate(input) {
-    this.props.calculateInput(input, this.getCoinObj());
-  }
-
-  render() {
-    const coins = this.getCoinObj();
+  getBadgeObj() {
     const { badge1, badge2, badge3, badge4 } = this.props;
-    const badges = {
+    return {
       badge1,
       badge2,
       badge3,
       badge4
     }
+  }
+
+  handleCalculate(input) {
+    this.props.calculateInput(input, this.getCoinObj());
+  }
+
+  render() {
+    const coins = this.getCoinObj(),
+          badges = this.getBadgeObj();
+
 
     return (
         <div className="main-container">
@@ -51,7 +56,7 @@ class App extends Component {
             selectCoin={this.props.selectCoin}
             selectedCoin={this.props.selectedCoin}
           />
-        <Input handleCalculate={this.handleCalculate} />
+          <Input handleCalculate={this.handleCalculate} />
         </div>
     )
   }
