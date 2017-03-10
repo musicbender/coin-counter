@@ -2,30 +2,31 @@ var webpack = require('webpack');
 
 module.exports = function (config) {
   config.set({
-    browsers: [ 'Chrome' ], //run in Chrome
-    singleRun: true, //just run once by default
-    frameworks: [ 'mocha' ], //use the mocha test framework
+    browsers: [ 'Chrome' ],
+    client: {
+      captureConsole: true
+    },
+    hostname: 'localhost',
+    singleRun: true,
+    frameworks: [ 'mocha', 'chai' ],
     files: [
-      'tests.webpack.js' //just load this file
+      'tests.webpack.js'
     ],
     preprocessors: {
-      'tests.webpack.js': [ 'webpack', 'sourcemap' ] //preprocess with webpack and our sourcemap loader
+      'tests.webpack.js': [ 'webpack', 'sourcemap' ]
     },
-    reporters: [ 'dots' ], //report results in this format
-    webpack: { //kind of a copy of your webpack config
-      devtool: 'inline-source-map', //just do inline source maps instead of the default
+    reporters: [ 'logcapture', 'dots' ],
+    webpack: {
+      devtool: 'inline-source-map',
       module: {
         loaders: [
           { test: /\.jsx?$/, loader: 'babel-loader' },
-          {
-              test: /\.css$/,
-              use: [ 'style-loader', 'css-loader' ]
-          }
+          { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] }
         ]
       }
     },
     webpackServer: {
-      noInfo: true //please don't spam the console when running in karma!
+      noInfo: true
     }
   });
 };

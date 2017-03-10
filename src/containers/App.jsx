@@ -5,6 +5,7 @@ import { selectCoin, calculateInput, incrementValue, decrementValue } from '../a
 import Title from '../components/title.jsx';
 import CoinSection from '../components/coin-section.jsx';
 import Input from '../components/input.jsx';
+import calculate from '../util/calculate';
 
 class App extends Component {
   constructor(props) {
@@ -16,11 +17,16 @@ class App extends Component {
   }
 
   render() {
+    var coinSet = {"coin1": 25, "coin2": 10, "coin3": 5, "coin4": 1}
+    var amount = 18;
+
+    console.log(calculate.get(amount, coinSet));
+
     const coins = {
-      coin1: this.props.coin1,
-      coin2: this.props.coin2,
-      coin3: this.props.coin3,
-      coin4: this.props.coin4
+      coin1: this.props.allCoins[0],
+      coin2: this.props.allCoins[1],
+      coin3: this.props.allCoins[2],
+      coin4: this.props.allCoins[3]
     }
 
     const badges = {
@@ -46,15 +52,12 @@ class App extends Component {
 }
 
 function mapStateToProps({coins, coinBadge}) {
-  const { selectedCoin, coin1, coin2, coin3, coin4 } = coins;
+  const { selectedCoin, allCoins } = coins;
   const { badge1, badge2, badge3, badge4 } = coinBadge;
 
   return {
     selectedCoin,
-    coin1,
-    coin2,
-    coin3,
-    coin4,
+    allCoins,
     badge1,
     badge2,
     badge3,
