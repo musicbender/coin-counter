@@ -7,10 +7,11 @@ export function selectCoin(coin) {
   }
 }
 
-export function calculateInput(value) {
+export function calculateInput(input, coinSet) {
   return {
     type: INPUT_CALCULATE,
-    value
+    input,
+    coinSet
   }
 }
 

@@ -10,30 +10,36 @@ import calculate from '../util/calculate';
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.handleCalculate = this.handleCalculate.bind(this);
   }
 
   changeValue(dir) {
-    return;
+    console.log(dir);
+  }
+
+  getCoinObj() {
+    const { coin1, coin2, coin3, coin4 } = this.props;
+    return {
+      coin1,
+      coin2,
+      coin3,
+      coin4
+    }
+  }
+
+  handleCalculate(input) {
+    this.props.calculateInput(input, this.getCoinObj());
   }
 
   render() {
-    var coinSet = { coin1: 25, coin2: 10, coin3: 5, coin4: 1 };
-    var amount = 18;
-
-    console.log(calculate.makeChange(amount, coinSet));
-
-    const coins = {
-      coin1: this.props.allCoins[0],
-      coin2: this.props.allCoins[1],
-      coin3: this.props.allCoins[2],
-      coin4: this.props.allCoins[3]
-    }
-
+    const coins = this.getCoinObj();
+    const { badge1, badge2, badge3, badge4 } = this.props;
     const badges = {
-      badge1: this.props.badge1,
-      badge2: this.props.badge2,
-      badge3: this.props.badge3,
-      badge4: this.props.badge4
+      badge1,
+      badge2,
+      badge3,
+      badge4
     }
 
     return (
@@ -45,19 +51,22 @@ class App extends Component {
             selectCoin={this.props.selectCoin}
             selectedCoin={this.props.selectedCoin}
           />
-          <Input calculateInput={this.props.calculateInput} />
+        <Input handleCalculate={this.handleCalculate} />
         </div>
     )
   }
 }
 
 function mapStateToProps({coins, coinBadge}) {
-  const { selectedCoin, allCoins } = coins;
+  const { selectedCoin, coin1, coin2, coin3, coin4 } = coins;
   const { badge1, badge2, badge3, badge4 } = coinBadge;
 
   return {
     selectedCoin,
-    allCoins,
+    coin1,
+    coin2,
+    coin3,
+    coin4,
     badge1,
     badge2,
     badge3,

@@ -2,7 +2,10 @@ import { COIN_SELECT, INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT } from '
 
 const initialState = {
   selectedCoin: null,
-  allCoins: [25, 10, 5, 1]
+  coin1: 25,
+  coin2: 10,
+  coin3: 5,
+  coin4: 1
 }
 
 export default function coins(state = initialState, action) {

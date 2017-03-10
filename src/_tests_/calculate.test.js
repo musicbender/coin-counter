@@ -1,6 +1,5 @@
 import calculate from '../util/calculate.js';
 
-
 describe('calculate', function () {
   it('should not error', function () {
     var coinSet = { coin1: 25, coin2: 10, coin3: 5, coin4: 1 },

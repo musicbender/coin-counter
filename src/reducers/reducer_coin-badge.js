@@ -1,4 +1,5 @@
 import { COIN_SELECT, INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT } from '../constants/index';
+import calculate from '../util/calculate';
 
 const initialState = {
   badge1: 0,
@@ -9,9 +10,17 @@ const initialState = {
 
 export default function coinBadge(state = initialState, action) {
   switch (action.type) {
-    case INPUT_CALCULATE:
-      return state;
+    case INPUT_CALCULATE: {
+      const badgeArr = calculate.makeChange(action.input, action.coinSet);
+      const badges = {
+        badge1: badgeArr[0],
+        badge2: badgeArr[1],
+        badge3: badgeArr[2],
+        badge4: badgeArr[3]
+      }
 
+      return { ...state, ...badges };
+    }
     default:
       return state;
   }
