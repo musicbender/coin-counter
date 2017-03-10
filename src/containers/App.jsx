@@ -17,10 +17,10 @@ class App extends Component {
   }
 
   render() {
-    var coinSet = {"coin1": 25, "coin2": 10, "coin3": 5, "coin4": 1}
+    var coinSet = { coin1: 25, coin2: 10, coin3: 5, coin4: 1 };
     var amount = 18;
 
-    console.log(calculate.get(amount, coinSet));
+    console.log(calculate.makeChange(amount, coinSet));
 
     const coins = {
       coin1: this.props.allCoins[0],

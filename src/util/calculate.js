@@ -1,34 +1,43 @@
 const calculate = {
     makeChange(amount, coinSet) {
-    	var coins = {}, total = 0, coinVal = 0, coinCount = 0;
+    	var badges = [], coinValue = 0, coinCount = 0;
+        const coinsArray = this.makeSortable(coinSet); //.sort(this.sortCoins)
 
-    	for (let i in coinSet) {
+    	for (let x of coinsArray) {
     		coinCount = 0;
-    		coinVal = coinSet[i];
+    		coinValue = x.value;
 
-    		while(amount >= coinVal){
-    			total += coinVal;
-    			amount -= coinVal;
+    		while (amount >= coinValue) {
+    			amount -= coinValue;
     			coinCount++;
     		}
-    		coins[i] = coinCount;
+    		badges[x.key] = {
+                'key': x.key,
+                'value': coinCount
+            };
+
+            console.log(badges);
     	}
-    	return coins;
-    },
-    orderCoins(coins) {
-        var c = coins;
-        return c.sort((a,b) => b-a);
-    },
-    get(amount, coinSet) {
-        const coins = this.orderCoins(coinSet);
 
-        return this.makeChange(amount, coins);
-    }
+    	return badges;
+    },
+
+    makeSortable(coinSet) {
+        var sortable = [];
+        for (let coin in coinSet) {
+            let obj = {};
+            obj.key = coin;
+            obj.value = coinSet[coin];
+
+            sortable.push(obj);
+        }
+
+        return sortable;
+    },
+
+    sortCoins(a,b) {
+        return b[1]-a[1];
+    },
 }
-
-
-
-
-
 
 export default calculate;
