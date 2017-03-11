@@ -39,3 +39,9 @@ button:focus {
   transform: scale(1.02);
   transition: 0.2s;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

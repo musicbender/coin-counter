@@ -8,3 +8,12 @@
   font-size: 1.2em;
   text-transform: uppercase;
 }
+
+/******* MEDIA QUERIES *******/
+
+@media only screen and (min-width: 1030px) {
+  .title {
+    margin: 1em;
+    font-size: 2em;
+  }
+}

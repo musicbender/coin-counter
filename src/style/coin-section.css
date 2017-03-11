@@ -1,5 +1,46 @@
 .coin-container {
-  position: relative;
-  width: 90%;
-  height: auto;
+    position: relative;
+    display: block;
+    height: 15em;
+    width: 93%;
+    margin: 0 auto;
+    top: 8%;
+}
+
+.coin-container:before {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.coin-container>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+/******* MEDIA QUERIES *******/
+
+@media only screen and (max-width: 1030px) {
+    .coin-container {
+        top: 0;
+        width: 90%;
+        max-width: 30em;
+        height: auto;
+        margin: 0 auto;
+    }
+    .coin-container:before {
+        padding-top: 100%;
+    }
+}
+
+@media all and (max-width: 767px) and (orientation: landscape) {
+    .coin-container {
+        top: -1.3em;
+        width: 68%;
+        height: 7em;
+    }
 }

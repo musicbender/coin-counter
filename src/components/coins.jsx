@@ -16,8 +16,12 @@ export default (props) => {
 
   return (
     <div className="coin-div">
-      <div className={`coin ${name} ${selected()}`} onClick={() => handleClick()}>{props.coin}</div>
-      <div className={`badge badge-${badge}`}>{props.badge ? props.badge : ''}</div>
+      <div className={`coin ${name} ${selected()}`} onClick={() => handleClick()}>
+        <span>{props.coin}</span>
+      </div>
+      <div className={`badge badge-${badge} ${props.badge ? "show" : ""}`}>
+        <span>{props.badge ? props.badge : ''}</span>
+      </div>
     </div>
   )
 }
