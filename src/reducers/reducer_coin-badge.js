@@ -11,12 +11,12 @@ const initialState = {
 export default function coinBadge(state = initialState, action) {
   switch (action.type) {
     case INPUT_CALCULATE: {
-      const badgeArr = calculate.makeChange(action.input, action.coinSet);
+      const badgeObj = calculate.makeChange(action.input, action.coinSet);
       const badges = {
-        badge1: badgeArr[0],
-        badge2: badgeArr[1],
-        badge3: badgeArr[2],
-        badge4: badgeArr[3]
+        badge1: badgeObj.coin1,
+        badge2: badgeObj.coin2,
+        badge3: badgeObj.coin3,
+        badge4: badgeObj.coin4,
       }
 
       return { ...state, ...badges };

@@ -1,7 +1,7 @@
 const calculate = {
     makeChange(input, coinSet) {
       const coinsArray = this.makeSortable(coinSet).sort(this.sortCoins);
-        var badges = [], coinValue = 0, amount = Math.round(input);
+        var badges = {}, coinValue = 0, amount = Math.round(input);
 
         //loop through array of coin objects
     	for (let x of coinsArray) {
@@ -13,9 +13,9 @@ const calculate = {
     			coinCount++;
     		}
 
-            badges.push(coinCount);
+            badges[x.coin] = coinCount;
     	}
-        
+
     	return badges;
     },
 
