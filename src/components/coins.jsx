@@ -14,6 +14,10 @@ export default (props) => {
     }
   }
 
+  const handleArrowClick = (dir) => {
+    props.changeValue(dir, name);
+  }
+
   return (
     <div className="coin-div">
       <div className={`coin ${name} ${selected()}`} onClick={() => handleClick()}>
@@ -22,8 +26,8 @@ export default (props) => {
       <div className={`badge badge-${badge} ${props.badge ? "show" : ""}`}>
         <span>{props.badge ? props.badge : ''}</span>
       </div>
-      <div className="arrow-up"></div>
-      <div className="arrow-down"></div>
+      <div className="arrow-up" onClick={() => handleArrowClick(1)}></div>
+      <div className="arrow-down" onClick={() => handleArrowClick(-1)}></div>
     </div>
   )
 }

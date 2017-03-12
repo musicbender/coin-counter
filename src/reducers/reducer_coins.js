@@ -14,11 +14,11 @@ export default function coins(state = initialState, action) {
       return { ...state, selectedCoin: action.coin };
     }
     case VALUE_INCREMENT: {
-    const newValue = action.coin + 1;
+    const newValue = state[action.coin] + 1;
       return { ...state, [action.coin]: newValue };
     }
     case VALUE_DECREMENT: {
-    const newValue = action.coin - 1;
+    const newValue = state[action.coin] - 1;
       return { ...state, [action.coin]: newValue };
     }
     default:

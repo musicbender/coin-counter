@@ -11,11 +11,16 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.changeValue = this.changeValue.bind(this);
     this.handleCalculate = this.handleCalculate.bind(this);
   }
 
-  changeValue(dir) {
-    console.log(dir);
+  changeValue(dir, coin) {
+    if (dir === 1) {
+      this.props.incrementValue(coin);
+    } else {
+      this.props.decrementValue(coin);
+    }
   }
 
   getCoinObj() {
@@ -55,6 +60,7 @@ class App extends Component {
             {...badges}
             selectCoin={this.props.selectCoin}
             selectedCoin={this.props.selectedCoin}
+            changeValue={this.changeValue}
           />
           <Input handleCalculate={this.handleCalculate} />
         </div>

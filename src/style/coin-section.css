@@ -15,7 +15,7 @@
     clear: both;
 }
 
-.coin-container>div {
+.coin-container > div {
     position: absolute;
     top: 0;
     left: 0;

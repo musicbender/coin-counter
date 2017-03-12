@@ -15,14 +15,16 @@ export function calculateInput(input, coinSet) {
   }
 }
 
-export function incrementValue() {
+export function incrementValue(coin) {
   return {
     type: VALUE_INCREMENT,
+    coin
   }
 }
 
-export function decrementValue() {
+export function decrementValue(coin) {
   return {
     type: VALUE_DECREMENT,
+    coin
   }
 }
