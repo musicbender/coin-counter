@@ -4,8 +4,18 @@ import '../style/input.css';
 class Input extends Component {
   constructor(props) {
     super(props);
+    this.state = {value: ''};
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const maxLength = 9, value = e.target.value;
+
+    this.setState({
+      value: value.length < 9 ? value : value.slice(0, maxLength)
+    });
   }
 
   handleSubmit(e) {
@@ -16,7 +26,12 @@ class Input extends Component {
   render() {
     return (
       <form className="input-container">
-        <input type="number" step="1" min="1" max="1000000000" ref={(input) => this.input = input}/>
+        <input
+          type="number"
+          value={this.state.value}
+          onChange={(e) => this.handleChange(e)}
+          ref={(input) => this.input = input}
+        />
         <button type="submit" onClick={this.handleSubmit}>CALCULATE</button>
       </form>
     )
