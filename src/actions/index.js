@@ -1,11 +1,4 @@
-import { COIN_SELECT, INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT } from '../constants/index';
-
-export function selectCoin(coin) {
-  return {
-    type: COIN_SELECT,
-    coin
-  }
-}
+import { INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT } from '../constants/index';
 
 export function calculateInput(input, coinSet) {
   return {

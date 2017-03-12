@@ -18,7 +18,6 @@ export default (props) => {
           name={coin.name}
           key={coin.name}
           badge={props[coin.badge]}
-          selectCoin={props.selectCoin}
           changeValue={props.changeValue}
         />
       )

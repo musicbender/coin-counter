@@ -17,6 +17,7 @@ input {
   padding: .33em 0.66em;
   background-color: rgb(245,245,245);
   border: 1px solid rgb(220,220,220);
+  outline: none;
 }
 
 button {
@@ -38,7 +39,6 @@ button:focus {
   cursor: pointer;
   background-color: rgb(60,60,60);
   outline: none;
-  transform: scale(1.02);
   transition: 0.2s;
 }
 

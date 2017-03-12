@@ -1,7 +1,6 @@
-import { COIN_SELECT, INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT } from '../constants/index';
+import { INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT } from '../constants/index';
 
 const initialState = {
-  selectedCoin: null,
   coin1: 25,
   coin2: 10,
   coin3: 5,
@@ -9,16 +8,17 @@ const initialState = {
 }
 
 export default function coins(state = initialState, action) {
+  const value = state[action.coin],
+        min = 1,
+        max = 999;
+
   switch (action.type) {
-    case COIN_SELECT: {
-      return { ...state, selectedCoin: action.coin };
-    }
     case VALUE_INCREMENT: {
-    const newValue = state[action.coin] + 1;
+      const newValue = value > max ? value : value + 1;
       return { ...state, [action.coin]: newValue };
     }
     case VALUE_DECREMENT: {
-    const newValue = state[action.coin] - 1;
+      const newValue = value <= min ? value : value - 1;
       return { ...state, [action.coin]: newValue };
     }
     default:

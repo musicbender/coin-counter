@@ -35,4 +35,11 @@ describe('calculate', function () {
 
     expect(() => calculate.makeChange(amount, coinSet).to.equal([1,1,1,0]));
   });
+
+  it('works with duplicate denominations', function () {
+    var coinSet = { coin1: 25, coin2: 10, coin3: 10, coin4: 1 },
+        amount = 18;
+
+    expect(() => calculate.makeChange(amount, coinSet).to.equal([0,1,0,8]));
+  });
 });
