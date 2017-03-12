@@ -1,0 +1,97 @@
+/******* ARROWS *******/
+
+[class^="arrow-"] {
+  position: absolute;
+  left: 45%;
+  width: 9%;
+  height: 9%;
+  border-top: 3px solid #000;
+  border-right: 3px solid #000;
+  border-color: rgba(0,0,0,0);
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 10;
+}
+
+.arrow-up {
+  top: 22%;
+  transform: translate(0, 100%) rotate(-45deg);
+  animation: hideUpArrow 0.15s ease-in;
+  animation-fill-mode: forwards;
+}
+
+.arrow-down {
+  bottom: 12%;
+  transform: translate(0, -50%) rotate(135deg);
+  animation: hideDownArrow 0.15s ease-in;
+  animation-fill-mode: forwards;
+}
+
+
+/******* HELPERS *******/
+
+.coin-div:hover .arrow-up {
+  animation: showUpArrow 0.35s ease-out alternate;
+  animation-fill-mode: forwards;
+}
+
+.coin-div:hover .arrow-down {
+  animation: showDownArrow 0.35s ease-out alternate;
+  animation-fill-mode: forwards;
+}
+
+
+/******* ANIMATIONS *******/
+
+@keyframes showUpArrow {
+  0% {
+    border-color: rgba(0,0,0,0);
+    transform: translate(0, 100%) rotate(-45deg);
+  }
+  30% {
+    border-color: rgba(0,0,0,0.4);
+    transform: translate(0, -100%) rotate(-45deg);
+  }
+  100% {
+    border-color: rgba(0,0,0,0.4);
+    transform: translate(0, -50%) rotate(-45deg);
+  }
+}
+
+@keyframes showDownArrow {
+  0% {
+    border-color: rgba(0,0,0,0);
+    transform: translate(0, -200%) rotate(135deg);
+  }
+  30% {
+    border-color: rgba(0,0,0,0.4);
+    transform: translate(0, 0%) rotate(135deg);
+  }
+  100% {
+    border-color: rgba(0,0,0,0.4);
+    transform: translate(0, -50%) rotate(135deg);
+  }
+}
+
+@keyframes hideUpArrow {
+  0% {
+    border-color: rgba(0,0,0,0.4);
+    transform: translate(0, -50%) rotate(-45deg);
+  }
+  100% {
+    border-color: rgba(0,0,0,0);
+    transform: translate(0, 100%) rotate(-45deg);
+  }
+}
+
+@keyframes hideDownArrow {
+  0% {
+    border-color: rgba(0,0,0,0.4);
+    transform: translate(0, -50%) rotate(135deg);
+
+  }
+  100% {
+    border-color: rgba(0,0,0,0);
+    transform: translate(0, -200%) rotate(135deg);
+  }
+}

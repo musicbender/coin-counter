@@ -1,5 +1,6 @@
 import React from 'react';
 import '../style/coins.css';
+import '../style/arrows.css';
 
 export default (props) => {
   const { name, coin, badge } = props;
