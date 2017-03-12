@@ -22,6 +22,8 @@ export default (props) => {
       <div className={`badge badge-${badge} ${props.badge ? "show" : ""}`}>
         <span>{props.badge ? props.badge : ''}</span>
       </div>
+      <div className="arrow-up"></div>
+      <div className="arrow-down"></div>
     </div>
   )
 }
