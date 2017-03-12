@@ -25,7 +25,7 @@ export default (props) => {
       <div className={`coin ${name}`}>
         <span className="unselectable">{props.coin}</span>
       </div>
-      <div className={`badge badge-${badge} ${props.badge ? "show" : ""}`}>
+      <div className={`badge badge-${badge} ${props.badge ? "show" : "hide"}`}>
         <span className="unselectable">{props.badge ? props.badge : ''}</span>
       </div>
       {getArrows()}
