@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { calculateInput, incrementValue, decrementValue } from '../actions/index';
+import { calculateInput, incrementValue, decrementValue, clearBadges } from '../actions/index';
 import Title from '../components/title.jsx';
 import CoinSection from '../components/coin-section.jsx';
 import Input from '../components/input.jsx';
@@ -59,6 +59,7 @@ class App extends Component {
             {...coins}
             {...badges}
             changeValue={this.changeValue}
+            clearBadges={this.props.clearBadges}
           />
           <Input handleCalculate={this.handleCalculate} />
         </div>
@@ -86,7 +87,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     calculateInput,
     incrementValue,
-    decrementValue
+    decrementValue,
+    clearBadges
   }, dispatch);
 }
 

@@ -6,6 +6,7 @@ export default (props) => {
   const { name, coin, badge } = props;
 
   const handleArrowClick = (dir) => {
+    props.clearBadges();
     props.changeValue(dir, name);
   }
 

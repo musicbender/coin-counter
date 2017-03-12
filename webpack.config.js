@@ -37,7 +37,13 @@ var config = {
         ]
     },
     plugins: [
-      HtmlWebpackPluginConfig
+      HtmlWebpackPluginConfig,
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: JSON.stringify('production')
+        }
+      }),
+      new webpack.optimize.UglifyJsPlugin()
     ],
     devServer: {
       historyApiFallback: true,
