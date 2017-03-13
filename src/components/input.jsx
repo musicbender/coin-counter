@@ -11,11 +11,14 @@ class Input extends Component {
   }
 
   handleChange(e) {
-    const maxLength = 9, value = e.target.value;
+    const maxLength = 92;
+    var   value = Math.floor(e.target.value).toString();
 
-    this.setState({
-      value: value.length < 9 ? value : value.slice(0, maxLength)
-    });
+
+      this.setState({
+        value: value.length < 9  ? value : value.slice(0, maxLength)
+      });
+
   }
 
   handleSubmit(e) {
