@@ -5,9 +5,9 @@
     "es6": true
   },
 
-  "plugins": ["react", "mocha", "chai-expect"],
+  "plugins": ["react", "css-modules", "mocha", "chai-expect"],
 
-  "extends": "eslint-config-airbnb",
+  "extends": ["eslint-config-airbnb", "plugin:css-modules/recommended"],
 
   "parser": "babel-eslint",
 

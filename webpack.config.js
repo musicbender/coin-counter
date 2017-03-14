@@ -22,8 +22,7 @@ var config = {
     ],
     output: {
         path: PATHS.dist,
-        filename: 'dist.js',
-        publicPath: '/'
+        filename: 'dist.js'
     },
     module: {
         rules: [

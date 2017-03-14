@@ -2,7 +2,7 @@ import React from 'react';
 import Coin from './coins.jsx';
 import '../style/coin-section.css';
 
-export default (props) => {
+const CoinSection = (props) => {
   const buildCoins = () => {
     const coinArray = [
       { name: 'coin1', badge: 'badge1' },
@@ -11,7 +11,7 @@ export default (props) => {
       { name: 'coin4', badge: 'badge4' },
     ];
 
-    const coinList = coinArray.map((coin) => {
+    return coinArray.map((coin) => {
       return (
         <Coin
           coin={props[coin.name]}
@@ -23,8 +23,6 @@ export default (props) => {
         />
       );
     });
-
-    return coinList;
   };
 
   return (
@@ -33,3 +31,5 @@ export default (props) => {
     </div>
   );
 };
+
+export default CoinSection;

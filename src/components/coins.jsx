@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/coins.css';
 import '../style/arrows.css';
 
-export default (props) => {
+const Coins = (props) => {
   const { name, coin, badge } = props;
 
   const handleArrowClick = (dir) => {
@@ -33,3 +33,13 @@ export default (props) => {
     </div>
   );
 };
+
+Coins.propTypes = {
+  coin: React.PropTypes.number.isRequired,
+  badge: React.PropTypes.number.isRequired,
+  name: React.PropTypes.string.isRequired,
+  changeValue: React.PropTypes.func,
+  clearBadges: React.PropTypes.func,
+};
+
+export default Coins;

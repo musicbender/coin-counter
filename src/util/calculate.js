@@ -15,10 +15,7 @@ const calculate = {
 
       badges[x.coin] = coinCount;
     }
-    const myTest = { coin1: 0, coin2: 1, coin3: 1, coin4: 3 };
-    console.log(badges);
-    console.log(myTest);
-    console.log(myTest == badges);
+
     return badges;
   },
 

@@ -5,13 +5,6 @@ describe('calculate', function () {
     expect(1).to.equal(1);
   });
 
-  it('should return an object', function () {
-    const coinSet = { coin1: 25, coin2: 10, coin3: 5, coin4: 1 };
-    const amount = 18;
-
-    expect(calculate.makeChange(amount, coinSet)).should.be.an('object');
-  });
-
   it('works with denominations as US coins in descending order', function () {
     const coinSet = { coin1: 25, coin2: 10, coin3: 5, coin4: 1 };
     const amount = 18;
@@ -42,5 +35,12 @@ describe('calculate', function () {
     const expected = { coin1: 0, coin2: 1, coin3: 0, coin4: 8 };
 
     expect(calculate.makeChange(amount, coinSet)).to.deep.equal(expected);
+  });
+
+  it('should return an object', function () {
+    const coinSet = { coin1: 25, coin2: 10, coin3: 5, coin4: 1 };
+    const amount = 18;
+
+    expect(calculate.makeChange(amount, coinSet)).should.be.an('object');
   });
 });

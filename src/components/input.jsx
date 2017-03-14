@@ -39,4 +39,8 @@ class Input extends Component {
   }
 }
 
+Input.propTypes = {
+  handleCalculate: React.PropTypes.func,
+};
+
 export default Input;
