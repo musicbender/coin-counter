@@ -1,20 +1,20 @@
 /******* TITLE *******/
 
 .title {
-  margin: 2em;
-  color: rgb(80,80,80);
-  text-align: center;
-  font-weight: 400;
-  font-size: 1.2em;
-  text-transform: uppercase;
+    margin: 2em;
+    color: rgb(80, 80, 80);
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    text-transform: uppercase;
 }
 
 
 /******* MEDIA QUERIES *******/
 
 @media only screen and (min-width: 1030px) {
-  .title {
-    margin: 1em;
-    font-size: 2em;
-  }
+    .title {
+        margin: 1em;
+        font-size: 2em;
+    }
 }
