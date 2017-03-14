@@ -13,14 +13,20 @@ module.exports = function (config) {
       'tests.webpack.js'
     ],
     preprocessors: {
-      'tests.webpack.js': [ 'webpack', 'sourcemap' ]
+      'tests.webpack.js': ['webpack', 'babel', 'sourcemap']
+    },
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015'],
+        sourceMap: 'inline'
+      },
     },
     reporters: [ 'logcapture', 'dots' ],
     webpack: {
-      devtool: 'inline-source-map',
+      devtool: 'cheap-module-source-map',
       module: {
         loaders: [
-          { test: /\.jsx?$/, loader: 'babel-loader' },
+          { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
           { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] }
         ]
       }

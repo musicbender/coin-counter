@@ -5,7 +5,7 @@
     "es6": true
   },
 
-  "plugins": ["react"],
+  "plugins": ["react", "mocha", "chai-expect"],
 
   "extends": "eslint-config-airbnb",
 
@@ -48,6 +48,10 @@
     "no-else-return": 0,
     "no-param-reassign": 0,
     "quotes": 0,
+
+    "mocha/no-exclusive-tests": "error",
+    "chai-expect/missing-assertion": 2,
+    "chai-expect/terminating-properties": 1,
 
     "react/display-name": 0, // Prevent missing displayName in a React component definition
     "react/jsx-no-undef": 2, // Disallow undeclared variables in JSX

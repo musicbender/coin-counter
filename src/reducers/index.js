@@ -4,7 +4,7 @@ import coinBadge from './reducer_coin-badge';
 
 const rootReducer = combineReducers({
   coins,
-  coinBadge
+  coinBadge,
 });
 
 export default rootReducer;

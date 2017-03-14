@@ -29,7 +29,8 @@ var config = {
         rules: [
             {   test: /\.jsx?$/,
                 include: __dirname + '/src',
-                loader: "babel-loader"
+                loader: "babel-loader",
+                exclude: /node_modules/
             },
             {
                 test: /\.css$/,

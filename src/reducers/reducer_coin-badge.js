@@ -1,12 +1,12 @@
-import { INPUT_CALCULATE, VALUE_INCREMENT, VALUE_DECREMENT, BADGE_CLEAR } from '../constants/index';
+import { INPUT_CALCULATE, BADGE_CLEAR } from '../constants/index';
 import calculate from '../util/calculate';
 
 const initialState = {
   badge1: 0,
   badge2: 0,
   badge3: 0,
-  badge4: 0
-}
+  badge4: 0,
+};
 
 export default function coinBadge(state = initialState, action) {
   switch (action.type) {
@@ -17,7 +17,7 @@ export default function coinBadge(state = initialState, action) {
         badge2: badgeObj.coin2,
         badge3: badgeObj.coin3,
         badge4: badgeObj.coin4,
-      }
+      };
 
       return { ...state, ...badges };
     }
@@ -26,8 +26,8 @@ export default function coinBadge(state = initialState, action) {
         badge1: 0,
         badge2: 0,
         badge3: 0,
-        badge4: 0
-      }
+        badge4: 0,
+      };
 
       return { ...state, ...badges };
     }
