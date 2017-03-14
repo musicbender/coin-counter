@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import RestrictedInput from 'react-restricted-input';
 import '../style/input.css';
 
 class Input extends Component {
@@ -13,10 +14,9 @@ class Input extends Component {
   handleChange(e) {
     const maxLength = 92;
     const value = e.target.value;
-
-    this.setState({
-      value: value.length < 9 ? value : value.slice(0, maxLength),
-    });
+      this.setState({
+        value: value.length < 9 ? value : value.slice(0, maxLength),
+      });
   }
 
   handleSubmit(e) {
@@ -27,8 +27,9 @@ class Input extends Component {
   render() {
     return (
       <form className="input-container">
-        <input
-          type="number"
+        <RestrictedInput
+          illegal={/\D+/}
+          type="text"
           value={this.state.value}
           onChange={e => this.handleChange(e)}
           ref={input => this.input = input}
