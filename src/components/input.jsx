@@ -12,16 +12,17 @@ class Input extends Component {
   }
 
   handleChange(e) {
-    const maxLength = 92;
+    const maxLength = 9;
     const value = e.target.value;
-      this.setState({
-        value: value.length < 9 ? value : value.slice(0, maxLength),
-      });
+
+    this.setState({
+      value: value.length < 9 ? +value : +value.slice(0, maxLength),
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.handleCalculate(this.input.value);
+    this.props.handleCalculate(this.state.value);
   }
 
   render() {
