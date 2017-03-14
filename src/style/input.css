@@ -34,8 +34,8 @@ input {
   outline: none;
 }
 
-button:hover,
-button:focus {
+.input-container button:hover,
+.input-container button:focus {
   cursor: pointer;
   background-color: rgb(60,60,60);
   outline: none;

@@ -14,8 +14,8 @@ export default (props) => {
     if (name !== 'coin4') {
       return (
         <div>
-          <div className="arrow-up" onClick={() => handleArrowClick(1)} />
-          <div className="arrow-down" onClick={() => handleArrowClick(-1)} />
+          <button className="arrow-up" onClick={() => handleArrowClick(1)} />
+          <button className="arrow-down" onClick={() => handleArrowClick(-1)} />
         </div>
       );
     }

@@ -1,0 +1,22 @@
+/******* BUTTON RESET *******/
+
+button {
+	margin:0;
+	border:0;
+	padding:0;
+	display:inline-block;
+	vertical-align:middle;
+	white-space:normal;
+	background:none;
+	line-height:1;
+  -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+  overflow: visible;
+	width: auto;
+}
+
+button:hover,
+button:focus {
+  background: none;
+}
