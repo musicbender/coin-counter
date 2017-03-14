@@ -3,6 +3,8 @@ import Coin from './coins.jsx';
 import '../style/coin-section.css';
 
 const CoinSection = (props) => {
+
+  // build coins from reuseable component
   const buildCoins = () => {
     const coinArray = [
       { name: 'coin1', badge: 'badge1' },

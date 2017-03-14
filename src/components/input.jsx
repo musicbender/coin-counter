@@ -11,6 +11,7 @@ class Input extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  // validate input and store in local state
   handleChange(e) {
     const maxLength = 9;
     const value = e.target.value;
@@ -20,6 +21,7 @@ class Input extends Component {
     });
   }
 
+  // submit input for calculation
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleCalculate(this.state.value);

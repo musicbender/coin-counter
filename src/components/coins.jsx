@@ -1,8 +1,8 @@
-// reuseable component used by each coin
-
 import React from 'react';
 import '../style/coins.css';
 import '../style/arrows.css';
+
+// reuseable component used by each coin
 
 const Coins = (props) => {
   const { name, coin, badge } = props;
@@ -25,6 +25,7 @@ const Coins = (props) => {
     }
   };
 
+  // make badge wider for bigger numbers
   const badgeFit = () => {
     if (badge) {
       const b = badge.toString().length;
