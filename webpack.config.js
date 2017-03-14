@@ -16,6 +16,7 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 var config = {
+    devtool: 'cheap-module-source-map',
     entry: [
         PATHS.src
     ],

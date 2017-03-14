@@ -5,7 +5,6 @@ import { calculateInput, incrementValue, decrementValue, clearBadges } from '../
 import Title from '../components/title.jsx';
 import CoinSection from '../components/coin-section.jsx';
 import Input from '../components/input.jsx';
-import calculate from '../util/calculate';
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +12,26 @@ class App extends Component {
 
     this.changeValue = this.changeValue.bind(this);
     this.handleCalculate = this.handleCalculate.bind(this);
+  }
+
+  getCoinObj() {
+    const { coin1, coin2, coin3, coin4 } = this.props;
+    return {
+      coin1,
+      coin2,
+      coin3,
+      coin4,
+    };
+  }
+
+  getBadgeObj() {
+    const { badge1, badge2, badge3, badge4 } = this.props;
+    return {
+      badge1,
+      badge2,
+      badge3,
+      badge4,
+    };
   }
 
   changeValue(dir, coin) {
@@ -23,51 +42,45 @@ class App extends Component {
     }
   }
 
-  getCoinObj() {
-    const { coin1, coin2, coin3, coin4 } = this.props;
-    return {
-      coin1,
-      coin2,
-      coin3,
-      coin4
-    }
-  }
-
-  getBadgeObj() {
-    const { badge1, badge2, badge3, badge4 } = this.props;
-    return {
-      badge1,
-      badge2,
-      badge3,
-      badge4
-    }
-  }
-
   handleCalculate(input) {
-    const { coin1, coin2, coin3, coin4 } = this.props;
     this.props.calculateInput(input, this.getCoinObj());
   }
 
   render() {
-    const coins = this.getCoinObj(),
-          badges = this.getBadgeObj();
+    const coins = this.getCoinObj();
+    const badges = this.getBadgeObj();
 
     return (
-        <div className="main-container">
-          <Title />
-          <CoinSection
-            {...coins}
-            {...badges}
-            changeValue={this.changeValue}
-            clearBadges={this.props.clearBadges}
-          />
-          <Input handleCalculate={this.handleCalculate} />
-        </div>
-    )
+      <div className="main-container">
+        <Title />
+        <CoinSection
+          {...coins}
+          {...badges}
+          changeValue={this.changeValue}
+          clearBadges={this.props.clearBadges}
+        />
+        <Input handleCalculate={this.handleCalculate} />
+      </div>
+    );
   }
 }
 
-function mapStateToProps({coins, coinBadge}) {
+App.propTypes = {
+  coin1: React.PropTypes.number.isRequired,
+  coin2: React.PropTypes.number.isRequired,
+  coin3: React.PropTypes.number.isRequired,
+  coin4: React.PropTypes.number.isRequired,
+  badge1: React.PropTypes.number.isRequired,
+  badge2: React.PropTypes.number.isRequired,
+  badge3: React.PropTypes.number.isRequired,
+  badge4: React.PropTypes.number.isRequired,
+  calculateInput: React.PropTypes.func,
+  clearBadges: React.PropTypes.func,
+  incrementValue: React.PropTypes.func,
+  decrementValue: React.PropTypes.func,
+};
+
+function mapStateToProps({ coins, coinBadge }) {
   const { coin1, coin2, coin3, coin4 } = coins;
   const { badge1, badge2, badge3, badge4 } = coinBadge;
 
@@ -79,7 +92,7 @@ function mapStateToProps({coins, coinBadge}) {
     badge1,
     badge2,
     badge3,
-    badge4
+    badge4,
   };
 }
 
@@ -88,7 +101,7 @@ function mapDispatchToProps(dispatch) {
     calculateInput,
     incrementValue,
     decrementValue,
-    clearBadges
+    clearBadges,
   }, dispatch);
 }
 

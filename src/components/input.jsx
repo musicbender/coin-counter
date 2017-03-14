@@ -4,7 +4,7 @@ import '../style/input.css';
 class Input extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = { value: '' };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -12,13 +12,11 @@ class Input extends Component {
 
   handleChange(e) {
     const maxLength = 92;
-    var   value = Math.floor(e.target.value).toString();
+    const value = e.target.value;
 
-
-      this.setState({
-        value: value.length < 9  ? value : value.slice(0, maxLength)
-      });
-
+    this.setState({
+      value: value.length < 9 ? value : value.slice(0, maxLength),
+    });
   }
 
   handleSubmit(e) {
@@ -32,13 +30,13 @@ class Input extends Component {
         <input
           type="number"
           value={this.state.value}
-          onChange={(e) => this.handleChange(e)}
-          ref={(input) => this.input = input}
+          onChange={e => this.handleChange(e)}
+          ref={input => this.input = input}
         />
         <button type="submit" onClick={this.handleSubmit}>CALCULATE</button>
       </form>
-    )
+    );
   }
-};
+}
 
 export default Input;
