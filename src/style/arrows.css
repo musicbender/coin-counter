@@ -1,4 +1,10 @@
 /******* ARROWS *******/
+.coin-div > div:nth-child(3) {
+  opacity: 0;
+  animation: showArrowContainer 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
 
 [class^="arrow-"] {
     position: absolute;
@@ -48,6 +54,11 @@
 
 
 /******* ANIMATIONS *******/
+
+@keyframes showArrowContainer {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
 
 @keyframes showUpArrow {
     0% {

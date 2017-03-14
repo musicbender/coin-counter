@@ -34,6 +34,7 @@ class App extends Component {
     };
   }
 
+  // change coin value up or down
   changeValue(dir, coin) {
     if (dir === 1) {
       this.props.incrementValue(coin);
@@ -42,6 +43,7 @@ class App extends Component {
     }
   }
 
+  // execute the calculate action to return badge object
   handleCalculate(input) {
     this.props.calculateInput(input, this.getCoinObj());
   }

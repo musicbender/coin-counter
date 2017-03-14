@@ -9,6 +9,7 @@
 
 .coin {
     position: absolute;
+    opacity: 0;
     top: 50%;
     left: 50%;
     font-size: 2em;
@@ -28,6 +29,30 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: rgba(0, 0, 0, 0.4);
+}
+
+.coin1 {
+  animation: showCoin 0.5s ease-in;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.coin2 {
+  animation: showCoin 0.5s ease-in;
+  animation-delay: 0.65s;
+  animation-fill-mode: forwards;
+}
+
+.coin3 {
+  animation: showCoin 0.5s ease-in;
+  animation-delay: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.coin4 {
+  animation: showCoin 0.5s ease-in;
+  animation-delay: 0.95s;
+  animation-fill-mode: forwards;
 }
 
 
@@ -54,6 +79,20 @@
 
 
 /******* ANIMATIONS *******/
+@keyframes showCoin {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 
 @keyframes showBadge {
     0% {

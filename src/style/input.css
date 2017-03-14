@@ -2,7 +2,7 @@
 
 .input-container {
     position: absolute;
-    bottom: -1em;
+    bottom: 0;
     left: 50%;
     width: 80%;
     max-width: 40em;
@@ -23,8 +23,9 @@ input {
 .input-container button {
     display: block;
     width: 100%;
-    height: 5em;
+    height: 3.5em;
     font-family: 'Roboto', sans-serif;
+    font-size: 1em;
     background-color: #000;
     color: #fff;
     border: 0;

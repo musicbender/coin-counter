@@ -1,3 +1,5 @@
+// reuseable component used by each coin
+
 import React from 'react';
 import '../style/coins.css';
 import '../style/arrows.css';
@@ -5,11 +7,13 @@ import '../style/arrows.css';
 const Coins = (props) => {
   const { name, coin, badge } = props;
 
+  // when arrows clicked, change coin values and clear badges
   const handleArrowClick = (dir) => {
     props.changeValue(dir, name);
     props.clearBadges();
   };
 
+  // get all arrows except for coin 4
   const getArrows = () => {
     if (name !== 'coin4') {
       return (
