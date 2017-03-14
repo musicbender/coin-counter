@@ -25,12 +25,19 @@ const Coins = (props) => {
     }
   };
 
+  const badgeFit = () => {
+    if (badge) {
+      const b = badge.toString().length;
+      return b > 4 ? "wide" : "";
+    }
+  };
+
   return (
     <div className="coin-div">
       <div className={`coin ${name}`}>
         <span className="unselectable">{coin}</span>
       </div>
-      <div className={`badge badge-${badge} ${badge ? "show" : "hide"}`}>
+      <div className={`badge badge-${badge} ${badge ? "show" : "hide"} ${badgeFit()}`}>
         <span className="unselectable">{badge || ''}</span>
       </div>
       {getArrows()}

@@ -147,6 +147,10 @@
     user-select: none;
 }
 
+.badge.wide {
+  width: 35%;
+}
+
 
 /******* MEDIA QUERIES *******/
 
